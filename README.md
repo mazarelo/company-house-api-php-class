@@ -1,7 +1,7 @@
 # company-house-api-php-class
 API Wrapper for Company house
 
-##Query a list: 
+##Query a list of companies that contain the query: 
 ```
 $companies = new CompanyHouse();
 $results = $companies->query("Nike");
