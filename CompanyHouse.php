@@ -1,12 +1,14 @@
 <?php
+namespace models\companies;
 
 class Company {
 
   private $apiUrl = "https://api.companieshouse.gov.uk";
   private $apiKey = "f3kUIwKiQscZ-J7pk6x0_vNczO31BfMT05w--0h9";
+  private $itemsPerPage;
 
-  function __construct(){
-
+  function __construct($itemPerPage){
+    $this->itemsPerPage = $itemPerPage;
   }
 
   private function access($url){
@@ -17,11 +19,11 @@ class Company {
     curl_setopt($ch, CURLOPT_USERPWD,"$this->apiKey:");
     $server_output = curl_exec ($ch);
     curl_close ($ch);
-    return $server_output;
+    return json_decode($server_output, true);
   }
 
-  public function query($query){
-    $url = "$this->apiUrl/search?q=$query";
+  public function query($query, $page = 1){
+    $url = "$this->apiUrl/search?q=$query&page_number=$page&items_per_page=$this->itemsPerPage";
     return $this->access($url);
   }
 
