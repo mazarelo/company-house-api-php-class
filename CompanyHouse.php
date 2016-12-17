@@ -1,10 +1,10 @@
 <?php
-namespace models\companies;
 
-class Company {
+
+class CompanyHouse {
 
   private $apiUrl = "https://api.companieshouse.gov.uk";
-  private $apiKey = "f3kUIwKiQscZ-J7pk6x0_vNczO31BfMT05w--0h9";
+  private $apiKey = "__YOUR_API_KEY__";
   private $itemsPerPage;
 
   function __construct($itemPerPage){
@@ -19,7 +19,7 @@ class Company {
     curl_setopt($ch, CURLOPT_USERPWD,"$this->apiKey:");
     $server_output = curl_exec ($ch);
     curl_close ($ch);
-    return json_decode($server_output, true);
+    return $server_output;
   }
 
   public function query($query, $page = 1){
