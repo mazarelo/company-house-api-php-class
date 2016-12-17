@@ -1,14 +1,14 @@
 # company-house-api-php-class
 API Wrapper for Company house
 
-Query a list: 
+##Query a list: 
 ```
 $companies = new CompanyHouse();
 $results = $companies->query("Nike");
 
 print($results);
 ```
-output example:
+##output example:
 ```
 {
     "total_results": 479,
@@ -67,7 +67,7 @@ output example:
                     9,
                     12.........
 ```
-Get Company info: 
+##Get Company info: 
 ```
 $companies = new CompanyHouse();
 $id = 5612312 //this is a random number
