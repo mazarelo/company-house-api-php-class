@@ -3,7 +3,7 @@ API Wrapper for Company house
 
 ##Query a list of companies that contain the query: 
 ```
-// pass item per page has a parameter
+// pass items per page has a parameter
 $companies = new CompanyHouse(50);
 $results = $companies->query("Nike");
 
