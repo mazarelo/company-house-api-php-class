@@ -9,7 +9,7 @@ $results = $companies->query("Nike");
 
 print($results);
 ```
-##output example:
+## output example:
 ```
 {
     "total_results": 479,
@@ -68,7 +68,7 @@ print($results);
                     9,
                     12.........
 ```
-##Get Company info: 
+## Get Company info: 
 ```
 $companies = new CompanyHouse();
 $id = 5612312 //this is a random number
